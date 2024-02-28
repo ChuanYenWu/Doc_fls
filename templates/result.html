@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+	<header>
+		<div class="container">
+		<div id="brandname">
+			
+		</div>
+		<h2>Face Generate</h2>
+		
+	</div>
+	</header>
+	<p style="color:black;font-size:20;text-align: left;"><b>Results for Generation</b></p>
+	<div class="results">
+
+    <!-- <h2 style="color:saddlebrown;">{{output_sentence}}</h2> -->
+	<!--	<img id="predict_image" src="{{img_data}}"> -->
+		<img id="predict_image" src="data:image/jpeg;base64,{{ img_data }}"> 	
+	<!-- <h2 style="color:saddlebrown;">{{output_sentence2}}</h2> -->
+
+	</div>
+
+</body>
+</html>

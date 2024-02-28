@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- <meta charset="utf-8"> -->
+    <title>主頁</title>
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+	  <div class="ml-container">
+      <h2 class="logo">Input</h2>
+		  <form action="{{ url_for('predict')}}" method="POST">
+		  <p>Enter Hair Color</p>
+      <p>['blonde hair', 'purple hair', 'red hair', 'blue hair', 'pink hair','green hair',
+        'white hair', 'gray hair', 'black hair', 'brown hair', 'aqua hair', 'orange hair']</p>
+		  <!-- <input type="text" name="comment"/> -->
+		  <textarea name="hair_color" rows="4" cols="50"></textarea>
+		  <br/>
+
+      <p>Enter Eyes Color</p>
+      <p>['pink eyes', 'purple eyes', 'aqua eyes', 'black eyes', 'blue eyes', 'yellow eyes',
+        'green eyes', 'orange eyes', 'red eyes', 'brown eyes', 'gray eyes']</p>
+      <textarea name="eyes_color" rows="4" cols="50"></textarea>
+		  <br/>
+
+		  <input type="submit" class="btn-info" value="Predict">
+		
+	    </form>
+		
+	  </div>
+    {% endblock %}
+
+
+  </body>
+</html>
+
+</body>
+</html>
