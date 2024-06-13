@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <!-- <meta charset="utf-8"> -->
-    <title>主頁</title>
+    <title>GAN 頭像生成 主頁</title>
   </head>
   <body>
     {% extends "template.html" %}
@@ -10,17 +10,33 @@
 	  <div class="ml-container">
       <h2 class="logo">Input</h2>
 		  <form action="{{ url_for('predict')}}" method="POST">
-		  <p>Enter Hair Color</p>
-      <p>['blonde hair', 'purple hair', 'red hair', 'blue hair', 'pink hair','green hair',
-        'white hair', 'gray hair', 'black hair', 'brown hair', 'aqua hair', 'orange hair']</p>
+		  <p>Choose Hair Color</p>
+
+      <!-- <p>['blonde hair', 'purple hair', 'red hair', 'blue hair', 'pink hair','green hair', -->
+      <!--   'white hair', 'gray hair', 'black hair', 'brown hair', 'aqua hair', 'orange hair']</p> -->
 		  <!-- <input type="text" name="comment"/> -->
-		  <textarea name="hair_color" rows="4" cols="50"></textarea>
+		  <!-- <textarea name="hair_color" rows="4" cols="50"></textarea> -->
+      
+      <select name="hair_color" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+        <option value=""></option>
+        {% for hcolor in hair_tag %}
+        <option value="{{hcolor}}">{{hcolor}}</option>
+        {% endfor %}
+      </select>
 		  <br/>
 
-      <p>Enter Eyes Color</p>
-      <p>['pink eyes', 'purple eyes', 'aqua eyes', 'black eyes', 'blue eyes', 'yellow eyes',
-        'green eyes', 'orange eyes', 'red eyes', 'brown eyes', 'gray eyes']</p>
-      <textarea name="eyes_color" rows="4" cols="50"></textarea>
+      <p>Choose Eyes Color</p>
+
+      <!-- <p>['pink eyes', 'purple eyes', 'aqua eyes', 'black eyes', 'blue eyes', 'yellow eyes', -->
+      <!--   'green eyes', 'orange eyes', 'red eyes', 'brown eyes', 'gray eyes']</p> -->
+      <!-- <textarea name="eyes_color" rows="4" cols="50"></textarea> -->
+      
+      <select name="eyes_color" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+        <option value=""></option>
+        {% for ecolor in eyes_tag %}
+        <option value="{{ecolor}}">{{ecolor}}</option>
+        {% endfor %}
+      </select>
 		  <br/>
 
 		  <input type="submit" class="btn-info" value="Predict">

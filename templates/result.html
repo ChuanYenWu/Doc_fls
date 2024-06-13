@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>GAN 頭像生成 結果</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/template.css') }}">
 </head>
 <body>
@@ -16,12 +16,12 @@
 		
 	</div>
 	</header>
-	<p style="color:black;font-size:20;text-align: left;"><b>Results for Generation</b></p>
+	<p style="color:black;font-size:20;text-align: left;"><b>Results for Generation</b>(64px upsample to 128px by html)</p>
 	<div class="results">
 
     <!-- <h2 style="color:saddlebrown;">{{output_sentence}}</h2> -->
 	<!--	<img id="predict_image" src="{{img_data}}"> -->
-		<img id="predict_image" src="data:image/jpeg;base64,{{ img_data }}"> 	
+		<img id="predict_image" src="data:image/jpeg;base64,{{ img_data }}" height="128" width="128"> 	
 	<!-- <h2 style="color:saddlebrown;">{{output_sentence2}}</h2> -->
 
 	</div>

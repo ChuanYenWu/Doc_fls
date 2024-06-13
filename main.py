@@ -11,7 +11,15 @@ app = Flask(__name__)
 #    return render_template("home.html")
 @app.route("/")
 def index():
-    return render_template("index.html")
+    hair_tag =['blonde hair', 'purple hair', 'red hair', 'blue hair', 'pink hair','green hair',
+        'white hair', 'gray hair', 'black hair', 'brown hair', 'aqua hair', 'orange hair']
+    eyes_tag =['pink eyes', 'purple eyes', 'aqua eyes', 'black eyes', 'blue eyes', 'yellow eyes',
+        'green eyes', 'orange eyes', 'red eyes', 'brown eyes', 'gray eyes']
+    context = {
+        'hair_tag' : hair_tag,
+        'eyes_tag' : eyes_tag,
+    }
+    return render_template("index.html", **context)
 
 @app.route("/about")
 def about():
