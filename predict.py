@@ -45,7 +45,7 @@ def image_gan(hair_color, eyes_color):
     predict_img = (modelG(z, hair_tag, eyes_tag)+1)/2
     predict_img = predict_img.to(torch.device('cpu'))[0]
     predict_img = numpy.array(predict_img.permute(1,2,0))
-    predict_img = cv2.resize(predict_img, (320,320), interpolation=cv2.INTER_LINEAR)
+    #predict_img = cv2.resize(predict_img, (320,320), interpolation=cv2.INTER_LINEAR)
 
     #return {'class': prediction, 'probability': probability}
     return numpy.uint8(predict_img*255)
