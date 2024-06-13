@@ -43,7 +43,7 @@ def predict():
     
 
     #return send_file(file_object, mimetype='image/PNG')
-    return render_template("result.html", img_data=encoded_img_data.decode('utf-8'))
+    return render_template("result.html", img_data=encoded_img_data.decode('utf-8'),hair_color = hair_color, eyes_color = eyes_color)
     
     
 if __name__ == "__main__":
