@@ -2,7 +2,7 @@
 #FROM ufoym/deepo:pytorch-py38-cpu
 FROM cnstark/pytorch:2.0.1-py3.10.11-ubuntu22.04
 
-RUN adduser -D myuser
+RUN useradd -rm -d /home/myuser -s /bin/bash myuser
 USER myuser
 WORKDIR /home/myuser
 
