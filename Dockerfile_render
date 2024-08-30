@@ -20,4 +20,4 @@ RUN pip install opencv-python-headless
 RUN pip install gunicorn
 
 #CMD python main.py
-CMD gunicorn -w 2 -b :5000 main:app
+CMD gunicorn -w 1 -b :5000 main:app
