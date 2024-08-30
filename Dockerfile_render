@@ -2,16 +2,22 @@
 #FROM ufoym/deepo:pytorch-py38-cpu
 FROM cnstark/pytorch:2.0.1-py3.10.11-ubuntu22.04
 
+RUN adduser -D myuser
+USER myuser
+WORKDIR /home/myuser
+
+ENV PATH="/home/myuser/.local/bin:${PATH}"
+
 ADD . /app
 WORKDIR /app
 
 EXPOSE 5000
 #RUN pip install -r requirement.txt
-RUN pip install flask
-RUN pip install opencv-python-headless
+RUN pip --user install flask
+RUN pip --user install opencv-python-headless
 #RUN pip install pytorch
 
-RUN pip install gunicorn
+RUN pip --user install gunicorn
 
 #CMD python main.py
-CMD gunicorn -w 2 -b :5000 run:main
+CMD gunicorn -w 2 -b :5000 main:app
