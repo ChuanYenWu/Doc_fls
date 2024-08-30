@@ -1,5 +1,7 @@
 此為將[GAN生成](https://github.com/ChuanYenWu/conditional_gan "link")當中的stage1 Generator部分的模型架構連同參數包裝成torchscript，並放入Docker中，搭配Flask作成簡單的網頁。<br>
 <br>
+[Render部署](https://docker-flask-animegan.onrender.com "link")
+<br>
 ### 執行
 建立IMAGE(映像檔):<br>
 ```sudo docker image build -t flaskpy:v01 .```
