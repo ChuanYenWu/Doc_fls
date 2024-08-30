@@ -13,11 +13,11 @@ WORKDIR /app
 
 EXPOSE 5000
 #RUN pip install -r requirement.txt
-RUN pip --user install flask
-RUN pip --user install opencv-python-headless
+RUN pip install flask
+RUN pip install opencv-python-headless
 #RUN pip install pytorch
 
-RUN pip --user install gunicorn
+RUN pip install gunicorn
 
 #CMD python main.py
 CMD gunicorn -w 2 -b :5000 main:app
